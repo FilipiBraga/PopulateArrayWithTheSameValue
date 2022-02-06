@@ -16,9 +16,21 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("----- Populate Array with Array.Fill");
-            Article[] arrayFill = _arrayPopulator.FillArray(InstantiateInitialArray(), InstantiateNewArticle());
+            Console.WriteLine("----- Populate Array With Array.Fill");
+            var arrayFill = _arrayPopulator.FillArray(InstantiateInitialArray(), InstantiateNewArticle());
             PrintArrayValues(arrayFill);
+
+            Console.WriteLine();
+
+            Console.WriteLine("----- Populate Array With Enumerable.Repeat");
+            var enumerableRepeat = _arrayPopulator.EnumerableRepeat(InstantiateNewArticle());
+            PrintArrayValues(enumerableRepeat);
+
+            Console.WriteLine();
+
+            Console.WriteLine("----- Populate Array With For Statement");
+            var articles = _arrayPopulator.ForStatement(InstantiateInitialArray(), InstantiateNewArticle());
+            PrintArrayValues(articles);
 
 
             Console.WriteLine();

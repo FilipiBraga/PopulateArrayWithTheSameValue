@@ -17,5 +17,26 @@
 
             return array;
         }
+
+        public Article[] EnumerableRepeat(Article value)
+        {
+            var articles = Enumerable.Repeat(value, 10).ToArray();
+
+            return articles;
+        }
+
+        public Article[] ForStatement(Article[] articles, Article article)
+        {
+            for (int index = 0; index < articles.Length; index++)
+            {
+                articles[index] = new Article
+                {
+                    Title = article.Title,
+                    LastUpdate = article.LastUpdate
+                };
+            }
+
+            return articles;
+        }
     }
 }
