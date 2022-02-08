@@ -17,6 +17,13 @@
 
             return array;
         }
+        
+        public Article[] FillArrayWithAditionalParameter(Article[] array, Article value)
+        {
+            Array.Fill(array, value, 5, 2);
+
+            return array;
+        }
 
         public Article[] EnumerableRepeat(Article value)
         {
