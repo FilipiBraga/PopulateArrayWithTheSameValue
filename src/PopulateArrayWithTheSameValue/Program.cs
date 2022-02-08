@@ -1,10 +1,10 @@
 ﻿namespace PopulateArrayWithTheSameValue
 {
-    internal class Program
+    public class Program
     {
         private static readonly ArrayPopulator _arrayPopulator = new();
-        private static int OutputResult = 0;
-        static void Main(string[] args)
+        public static int OutputResult = 0;
+        public static void Main(string[] args)
         {
             Console.WriteLine("-----  How to Populate or Instantiate Array with a Same Value");
             Console.WriteLine("-------------------------------------------------------------");
