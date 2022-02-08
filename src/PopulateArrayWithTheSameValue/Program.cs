@@ -2,7 +2,8 @@
 {
     internal class Program
     {
-        public static readonly ArrayPopulator _arrayPopulator = new();
+        private static readonly ArrayPopulator _arrayPopulator = new();
+        private static int OutputResult = 0;
         static void Main(string[] args)
         {
             Console.WriteLine("-----  How to Populate or Instantiate Array with a Same Value");
@@ -32,8 +33,9 @@
             var articles = _arrayPopulator.ForStatement(InstantiateInitialArray(), InstantiateNewArticle());
             PrintArrayValues(articles);
 
-
             Console.WriteLine();
+
+            OutputResult = 1;
         }
 
         private static void PrintArrayValues(Article[] array)
