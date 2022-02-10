@@ -9,7 +9,11 @@ namespace Tests
     public class Tests
     {
         private readonly ArrayPopulator _arrayPopulator = new();
-        private readonly Article _article = new Article { Title = "How to Find the Maximum Value of an Array in C#", LastUpdate = new DateTime(2022, 02, 07) };
+        private readonly Article _article = new() 
+            { 
+                Title = "How to Find the Maximum Value of an Array in C#", 
+                LastUpdate = new DateTime(2022, 02, 07) 
+            };
 
         [TestMethod]
         public void GivenTheMainProgram_ThenRunTheMainMethodAndWriteResultsAtTheConsole()
