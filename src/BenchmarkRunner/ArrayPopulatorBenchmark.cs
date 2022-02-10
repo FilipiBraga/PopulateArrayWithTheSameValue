@@ -6,8 +6,13 @@ namespace BenchmarkRunner
     public class ArrayPopulatorBenchmark
     {
         public static readonly ArrayPopulator _arrayPopulator = new();
-        private Article[] benchMarkArray = new Article[1000 * 100];
-        private Article benchmarkArticle = new Article { Title = "How to Copy Array Elements to New Array in C#", LastUpdate = new DateTime(2022, 01, 31) };
+private Article[] benchMarkArray = new Article[1000 * 100];
+private Article benchmarkArticle = 
+    new Article 
+    { 
+        Title = "How to Copy Array Elements to New Array in C#", 
+        LastUpdate = new DateTime(2022, 01, 31) 
+    };
 
         [Benchmark]
         public void FillArray()
@@ -18,13 +23,19 @@ namespace BenchmarkRunner
         [Benchmark]
         public void EnumerableRepeat()
         {
-            _arrayPopulator.EnumerableRepeat(benchmarkArticle);
+            _arrayPopulator.EnumerableRepeat(benchmarkArticle, benchMarkArray.Length);
         }
 
         [Benchmark]
         public void ForStatement()
         {
             _arrayPopulator.ForStatement(benchMarkArray, benchmarkArticle);
+        }
+
+        [Benchmark]
+        public void ForStatementShallowCopy()
+        {
+            _arrayPopulator.ForStatementShallowCopy(benchMarkArray, benchmarkArticle);
         }
     }
 }

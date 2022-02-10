@@ -24,16 +24,20 @@
             Console.WriteLine();
 
             Console.WriteLine("----- Populate Array With Enumerable.Repeat");
-            var enumerableRepeat = _arrayPopulator.EnumerableRepeat(InstantiateNewArticle());
+            var enumerableRepeat = _arrayPopulator.EnumerableRepeat(InstantiateNewArticle(), 10);
             PrintArrayValues(enumerableRepeat);
 
             Console.WriteLine();
 
             Console.WriteLine("----- Populate Array With For Statement");
-            var articles = _arrayPopulator.ForStatement(InstantiateInitialArray(), InstantiateNewArticle());
-            PrintArrayValues(articles);
+            var forStatement = _arrayPopulator.ForStatement(InstantiateInitialArray(), InstantiateNewArticle());
+            PrintArrayValues(forStatement);
 
             Console.WriteLine();
+
+            Console.WriteLine("----- Populate Array With For Statement Shallow Copy");
+            var forStatementShallowCopy = _arrayPopulator.ForStatementShallowCopy(InstantiateInitialArray(), InstantiateNewArticle());
+            PrintArrayValues(forStatementShallowCopy);
 
             OutputResult = 1;
         }

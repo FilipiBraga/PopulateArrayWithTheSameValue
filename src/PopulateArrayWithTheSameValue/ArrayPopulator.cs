@@ -25,9 +25,9 @@
             return array;
         }
 
-        public Article[] EnumerableRepeat(Article value)
+        public Article[] EnumerableRepeat(Article value, int count)
         {
-            var articles = Enumerable.Repeat(value, 10).ToArray();
+            var articles = Enumerable.Repeat(value, count).ToArray();
 
             return articles;
         }
@@ -41,6 +41,16 @@
                     Title = article.Title,
                     LastUpdate = article.LastUpdate
                 };
+            }
+
+            return articles;
+        }
+
+        public Article[] ForStatementShallowCopy(Article[] articles, Article article)
+        {
+            for (int index = 0; index < articles.Length; index++)
+            {
+                articles[index] = article;
             }
 
             return articles;

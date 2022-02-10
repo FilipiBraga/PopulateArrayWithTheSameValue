@@ -74,7 +74,7 @@ namespace Tests
         [TestMethod]
         public void GivenAnObject_ThenReturnAnArrayFilledWithThisObjectUsingEnumerableRepeat()
         {
-            var populatedArticle = _arrayPopulator.EnumerableRepeat(_article);
+            var populatedArticle = _arrayPopulator.EnumerableRepeat(_article, 10);
 
             Assert.IsNotNull(populatedArticle);
             Assert.IsTrue(populatedArticle.Any());
@@ -89,6 +89,17 @@ namespace Tests
             Assert.IsTrue(populatedArticle.Any());
             Assert.AreNotSame(populatedArticle[0], _article);
             Assert.AreNotSame(populatedArticle[0], populatedArticle[1]);
+        }
+
+        [TestMethod]
+        public void GiveAnArticleAndAnObject_ThenReturnAFilledArrayUsingForWithShallowCopy()
+        {
+            var populatedArticle = _arrayPopulator.ForStatementShallowCopy(new Article[10], _article);
+
+            Assert.IsNotNull(populatedArticle);
+            Assert.IsTrue(populatedArticle.Any());
+            Assert.AreSame(populatedArticle[0], _article);
+            Assert.AreSame(populatedArticle[0], populatedArticle[1]);
         }
     }
 }
